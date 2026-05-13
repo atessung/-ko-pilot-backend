@@ -29,13 +29,11 @@ export default async function handler(req, res) {
       });
     }
 
-    // === 1. Tavily searches (paralel) ===
+    // === 1. Tavily searches (paralel) — 3 query (60s timeout için optimize) ===
     const searches = [
       `${company} son haberler strateji 2026`,
-      `${company} CEO yönetim ekibi değişim`,
-      `${company} M&A yatırım dönüşüm vizyon`,
-      `${person} ${company} LinkedIn kariyer geçmişi`,
-      `${company} sektör trend Türkiye execution`,
+      `${company} CEO yönetim değişim M&A`,
+      `${person} ${company} LinkedIn`,
     ];
 
     const searchResults = await Promise.all(
@@ -119,8 +117,8 @@ Sponsor / karar verici / bütçe sahibi / influencer matrix'i. Yaklaşım strate
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 4096,
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 3000,
         system: systemPrompt,
         messages: [{ role: 'user', content: userPrompt }],
       })
@@ -145,7 +143,7 @@ Sponsor / karar verici / bütçe sahibi / influencer matrix'i. Yaklaşım strate
     return res.status(200).json({
       brief: briefMarkdown,
       generated_at: new Date().toISOString(),
-      model: 'claude-sonnet-4-6',
+      model: 'claude-haiku-4-5',
       searches_count: searches.length,
       tokens: {
         input: anthropicData.usage?.input_tokens || 0,
