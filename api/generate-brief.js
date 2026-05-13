@@ -84,30 +84,46 @@ ${notes ? '\nMevcut not: ' + notes : ''}
 ${context}
 
 ## GÖREV
-Yukarıdaki bulgulara dayanarak, Ateş'in bu prospect ile görüşme öncesi okuyacağı **7-bölümlü brief** üret. Markdown formatında.
+Yukarıdaki bulgulara dayanarak Ateş'in bu prospect ile görüşme öncesi okuyacağı **6-bölümlü brief** üret. Markdown formatında. Sıkı, kısa, somut. Açıklama, dolgu, AI cliché'si yok. Bilmediğini ⚠ ile işaretle.
 
-### 1. Açılış Pasajı
-2 cümlelik hook. Stratejik moment + Otokoç vaka referansı + 15 dk görüşme önerisi. WhatsApp/email'e kopyalanabilir kalite.
+### 1. Uygunluk Skoru
+**X/10** EN BAŞTA. Tek satır.
+Hemen altında faktör tablosu — sadece faktör adı ve puan (açıklama YOK):
+- Yapısal karmaşıklık: X/10
+- Ciro bandı: X/10
+- Profesyonel yönetim: X/10
+- Strategic window: X/10
+- Personal fit: X/10
+(Risk & mitigasyon EKLEME.)
 
-### 2. Stratejik Moment Sinyalleri
-Son 18 ayın execution-gap penceresi açan sinyalleri. 3-5 madde. Her madde için kaynak (URL).
+### 2. Açılış & Sinyaller
+İki bileşen tek bölümde:
+**Hook (2 cümle):** Stratejik moment + Otokoç referansı + 15 dk görüşme önerisi. WhatsApp/email'e copy-paste kalitesinde. Tire ("—") kullanma, virgül ve nokta ile akıt.
+**Sinyaller (3-5 madde):** Son 18 ayda execution-gap penceresi açan somut olaylar. Her madde için kaynak URL'i. Hook ile sinyaller arasında tekrar yapma — hook genel, sinyaller spesifik.
 
 ### 3. Execution-Gap Hipotezi
-Bu şirket için spesifik hipotez (sektörel heuristic + şirkete özel veri). 2-3 cümle. Otokoç'a benzer iyileştirme potansiyeli vurgusu.
+2-3 cümle. Şirkete özel hipotez (sektörel heuristic + şirkete özel veri). Otokoç-benzeri iyileştirme potansiyelini sayısal vurgula.
 
 ### 4. Warm-Intro Haritası
-Bilinen kontakt varsa öncelik. Yoksa ikincil yollar (Kaplan referansı, sektörel ortaklık, vb.). Önerilen ilk hamle.
+TO-THE-POINT. Indirect öneri yok. Format:
+**Önerilen ilk hamle:** [tek cümle, somut aksiyon — kim, ne kanaldan, ne diyecek]
+**Yedek yol:** [varsa tek cümle]
+Bilinen ortak kontakt yoksa Kaplan referansını veya sektörel ortaklığı kullan.
 
-### 5. Kişi Profili — ${person}
-Görev süresi, önceki roller, public görüşler/röportajlar, diyalog tarzı tahmini. Önerilen yaklaşım. ⚠ ile belirsiz bilgileri işaretle.
+### 5. ${person}
+İki alan, başka hiçbir şey:
+**Açılış:** [bu kişiye özel ilk 30 saniye nasıl başlamalı — somut cümle]
+**Dil:** [kullanılması gereken ton/jargon — örn. "rakam-odaklı, operasyonel terminoloji, abartısız"]
+Görev süresi tek satır parantez içinde verilebilir; belirsizse ⚠ koy.
 
-### 6. Karar Verici Haritası
-Sponsor / karar verici / bütçe sahibi / influencer matrix'i. Yaklaşım stratejisi.
+### 6. Karar Verici
+Üç satır, açıklama yok:
+**Sponsor:** [isim, unvan] — [tek cümle yaklaşım]
+**Ally:** [isim, unvan] — [tek cümle yaklaşım]
+**Bütçe sahibi:** [isim/unvan] — [tek cümle yaklaşım]
+Bilinmiyorsa ⚠ doğrulanmalı.
 
-### 7. Uygunluk Skoru
-**X/10** + kırılım: yapısal karmaşıklık, ciro bandı, profesyonel yönetim, strategic window, personal fit. Risk + mitigasyon notu.
-
-ÇIKTI: Sadece markdown brief, başka açıklama yok.`;
+ÇIKTI: Sadece markdown brief, ön/arka söz yok.`;
 
     const anthropicResp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
