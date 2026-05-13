@@ -1,0 +1,7 @@
+{
+  "name": "ko-pilot-backend",
+  "version": "1.0.0",
+  "description": "Ko-Pilot brief generator backend",
+  "type": "module",
+  "private": true
+}

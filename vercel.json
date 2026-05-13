@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "functions": {
+    "api/generate-brief.js": {
+      "maxDuration": 60
+    }
+  }
+}
